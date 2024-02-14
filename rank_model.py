@@ -3,7 +3,8 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 import os
-# 创建 RankNet 模型
+
+
 class RankNet(nn.Module):
     def __init__(self, input_dim, output_dim):
         super(RankNet, self).__init__()
@@ -41,13 +42,13 @@ class MLPclassifier(nn.Module):
 
 def load_point_model(input_dim, output_dim):
 
-    loaded_model = MLPclassifier(input_dim, output_dim)  # 创建一个模型实例
+    loaded_model = MLPclassifier(input_dim, output_dim)
 
     return loaded_model
 
 def load_pair_model(input_dim, output_dim):
 
-    loaded_model = RankNet(input_dim=input_dim, output_dim=output_dim)  # 创建一个模型实例
+    loaded_model = RankNet(input_dim=input_dim, output_dim=output_dim)
 
     return loaded_model
 
