@@ -1,4 +1,4 @@
-### Implementation Code for "Are LLMs Pretending To Be Fair? Goodhart's Law in Evaluating Discrimination of Large Language Models"
+### Implementation Code
 
 We will illustrate the experiment from next steps:
 ## 1. Generate responses from LLMs
@@ -8,7 +8,7 @@ python run_chatgpt.py [arg1] [arg2] ... [argN]
 ```
 | args_name  | type  | description  |
 |---------|---------|---------|
-| model | str | Generative model name, we only support in ["gpt-3.5-turbo-0301", "gpt-3.5-turbo-0613"] |
+| model | str | Generative model name, we only support in ["gpt-3.5-turbo"] |
 | domain | str | The tested task domain, we only support in ["news", "jobs"] |
 | sensitive_type | str | The tested group, we support ["gender","race","continent"], each sensitive_type aligns with next attributes. |
 | gender| str| If sensitive type is gender, choose among ["Male, Female"] |
@@ -26,13 +26,28 @@ python run_chatgpt.py [arg1] [arg2] ... [argN]
 The example results are: request.example and out.example
 
 ### According to different LLMs' format, parse the format to csv
-| emb  | label | rank |
-|---------|---------|---------|
-| text response embedding from | $s\in\mathcal{S}$ | position in the ranking list |
+
+| emb  | label | name | rank |  
+|---------|---------|---------|  
+| text response embedding | $s\in\mathcal{S}$ | user names| position in the ranking list |  
+  
+In the paper, we will give an example in emb_example.csv
 
 
-## 2. Train IV to get weight for each responses
-```bash
-python train_IV.py
+## 2. Choose the proper user names
+
+run bash
 ```
-Get the weight npy file for testing
+python filter_attribute.py
+```
+Then you will get the score of each names: {'Alice': 6.37, 'Bob': 5.99}.
+Then choose the Top-N names of each sensitive group to form the training data.
+
+## 3. Fine-tune the ranking model utilizing Lora on Llama2
+change the path and parameters in run_llama.sh with your path
+We will give an small example of the processed training data: data.json
+run bash
+```
+sh run_llama.sh
+```
+

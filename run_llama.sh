@@ -1,0 +1,22 @@
+ CUDA_VISIBLE_DEVICES=0,1 accelerate launch train_train_llama.py \
+                    --base_model llama_hf/7B/ \
+                    --train_data_path "[\"your_path\"]"   \
+                    --val_data_path "[\"your_path\"]" \
+                    --output_dir your_path \
+                    --batch_size 128 \
+                    --micro_batch_size 8 \
+                    --num_epochs 20 \
+                    --learning_rate 1e-4 \
+                    --cutoff_len 512 \
+                    --lora_r 8 \
+                    --lora_alpha 16\
+                    --lora_dropout 0.2 \
+                    --lora_target_modules '[q_proj,v_proj]' \
+                    --train_on_inputs \
+                    --group_by_length \
+                    --resume_from_checkpoint 'xxx' \
+                    --seed 2024 \
+                    --sample 1024 \
+                    --wandb_project Test \
+                    --wandb_run_name Test \
+                    --wandb_watch all \
