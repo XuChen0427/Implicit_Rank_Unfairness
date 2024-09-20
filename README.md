@@ -60,7 +60,7 @@ sh run_llama.sh
 ## For citation, please ref
 
 ```
-@inproceedings{xu-etal-2024-multi,
+@inproceedings{xu-etal-2024-LLM_fairness,
     title = "A Study of Implicit Ranking Unfairness in Large Language Models",
     author = "Xu, Chen  and
       Wang, Wenjie  and
