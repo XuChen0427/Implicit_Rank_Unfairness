@@ -1,9 +1,10 @@
-Xu Chen
-Renmin University of China, Gaoling School of Artificial Intelligence
-xc_chen@ruc.edu.cn
+### Implementation Code for A Study of Implicit Ranking Unfairness in Large Language Models of EMNLP 2024 findings
 
+# If you any questions, please mail to 
+```
+Xu Chen: xc_chen@ruc.edu.cn
+```
 
-### Implementation Code
 
 We will illustrate the experiment from next steps:
 ## 1. Generate responses from LLMs
