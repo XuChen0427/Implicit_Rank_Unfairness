@@ -1,4 +1,6 @@
-
+Xu Chen
+Renmin University of China, Gaoling School of Artificial Intelligence
+xc_chen@ruc.edu.cn
 
 
 ### Implementation Code
@@ -68,6 +70,6 @@ sh run_llama.sh
     month = Nov,
     year = "2024",
     address = "Miami, Florida",
-    publisher = "Association for Computational Linguistics",
+    publisher = "Association for Computational Linguistics"}
 ```
 
