@@ -1,3 +1,6 @@
+
+
+
 ### Implementation Code
 
 We will illustrate the experiment from next steps:
@@ -49,5 +52,22 @@ We will give an small example of the processed training data: data.json
 run bash
 ```
 sh run_llama.sh
+```
+
+## For citation, please ref
+
+```
+@inproceedings{xu-etal-2024-multi,
+    title = "A Study of Implicit Ranking Unfairness in Large Language Models",
+    author = "Xu, Chen  and
+      Wang, Wenjie  and
+      Li, Yuxin  and
+      Pang, Liang  and
+      Xu, Jun and Tat-Seng Chua",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    month = Nov,
+    year = "2024",
+    address = "Miami, Florida",
+    publisher = "Association for Computational Linguistics",
 ```
 
